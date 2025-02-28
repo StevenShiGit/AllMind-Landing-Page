@@ -1,96 +1,97 @@
 "use client";
-import Image from "next/image";
-import { motion } from "framer-motion";
 
+import Image from "next/image";
+
+import LogoSlider from "@/components/logoSlider2";
+import Future from "@/components/future"
+import TextSlider from "@/components/TextSlider"
+import Content from "@/components/Content"
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-gray-100 flex flex-col items-center text-center p-6">
+    <div className="relative min-h-screen bg-gradient-to-b">
       {/* Navbar */}
-      <nav className="w-full flex justify-between items-center py-4 px-8">
-        <div className="flex items-center space-x-2">
-          <span className="text-xl font-bold">snappify</span>
-        </div>
+      <nav className="absolute top-0 left-0 w-full flex justify-between items-center p-6 text-white">
+      <Image src="/logo.svg" alt="Logo" width={41} height={29} />
         <div className="space-x-6 hidden md:flex">
-          <a href="#" className="text-gray-700 hover:text-black">Pricing</a>
-          <a href="#" className="text-gray-700 hover:text-black">Use Cases</a>
-          <a href="#" className="text-gray-700 hover:text-black">Product</a>
-          <a href="#" className="text-gray-700 hover:text-black">Resources</a>
+          <a href="#" className="hover:underline">Products</a>
+          <a href="#" className="hover:underline">Solutions</a>
+          <a href="#" className="hover:underline">Research</a>
+          <a href="#" className="hover:underline">Resources</a>
+          <a href="#" className="hover:underline">Company</a>
         </div>
-        <div className="flex space-x-4 items-center">
-          <a href="#" className="text-gray-700 hover:text-black">Dashboard</a>
-          <a href="#" className="text-gray-700 hover:text-black">Editor</a>
-          <div className="w-8 h-8 bg-gray-300 rounded-full"></div>
+        <div className="space-x-4">
+          <button className="px-4 py-2 border rounded">Try the API</button>
+          <button className="px-4 py-2 border rounded">Talk to Sales</button>
         </div>
       </nav>
-      
+
       {/* Hero Section */}
-      <div className="max-w-4xl text-center mt-16">
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
-          We enable developers to create <span className="text-blue-500">stunning presentations</span>
-        </h1>
-        <div className="mt-4 px-4 py-1 bg-green-100 text-green-700 rounded-lg inline-block text-sm font-medium">
-          New! - Experimental Video Export 🎥
+  
+      <div className="flex flex-col items-center h-[690px] justify-center text-center text-white px-4 bg-[url('/background.webp')] bg-cover bg-center">
+        <h1 className="text-5xl font-bold">Frontier AI. In Your Hands.</h1>
+        <p className="mt-4 text-lg">Configurable AI for all builders.</p>
+
+        {/* Search Input */}
+        <div className="mt-6 flex items-center border border-white rounded-md p-2 w-80 bg-white">
+          <input
+            type="text"
+            placeholder="Talk to le Chat"
+            className="flex-1 bg-transparent text-black outline-none px-2"
+          />
+          <button className="px-4 py-2 bg-orange-500 text-white rounded-md">➜</button>
         </div>
-        <p className="mt-4 text-gray-600 text-lg">
-          Take your Code Presentations to the next level with snappify's powerful animation features.
-        </p>
-        <div className="mt-6 flex justify-center space-x-4">
-          <button className="px-6 py-2 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700">
-            Get started - It's free
-          </button>
-          <button className="px-6 py-2 border border-blue-600 text-blue-600 rounded-lg font-semibold hover:bg-blue-50">
-            View Templates
-          </button>
+
+        {/* Links */}
+        <div className="mt-6 flex space-x-6">
+          <a href="#" className="text-lg hover:underline">Enterprise deployments ➜</a>
+          <a href="#" className="text-lg hover:underline">APIs on la Platforme ➜</a>
         </div>
       </div>
 
-      {/* Animated Images Section */}
-      <div className="mt-16 flex items-center space-x-12">
-        <motion.div
-          initial={{ scale: 0.8, opacity: 0 }}
-          whileInView={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-        >
-          <Image src="/gecko.jpeg" width={600} height={400} alt="Snappify Example" />
-        </motion.div>
-        <div className="text-left max-w-md">
-          <h2 className="text-2xl font-bold text-gray-900">Create next-level presentations</h2>
-          <p className="mt-2 text-gray-600">
-            Say goodbye to boring presentations created with PowerPoint or Keynote. 👋
-            Snappify enables you to create stunning presentations, with first-class support for code snippets.
-          </p>
-          <a href="#" className="text-blue-600 font-semibold mt-2 inline-block">Learn more →</a>
+      {/* Footer */}
+      <div className="bg-amber-50 left-0 w-full py-6">
+        <div className="max-w-6xl mx-auto flex items-center justify-between bg-amber-100">
+          <div className="flex items-center space-x-4">
+          <div className="relative flex w-full shrink-0 flex-col items-center justify-center md:w-[125px]">
+            {/* Color Bars */}
+            <div className="h-[25px] w-full" style={{ background: "hsla(51, 100%, 50%, 1)" }}></div>
+            <div className="h-[25px] w-full" style={{ background: "hsla(41, 100%, 50%, 1)" }}></div>
+            <div className="h-[25px] w-full" style={{ background: "hsla(30, 100%, 51%, 1)" }}></div>
+            <div className="h-[25px] w-full" style={{ background: "hsla(17, 96%, 52%, 1)" }}></div>
+            <div className="h-[25px] w-full" style={{ background: "hsla(1, 100%, 44%, 1)" }}></div>
+
+            {/* Overlay Image */}
+        
+            <Image src="/minstral-logo.svg" alt="Mistral Logo" width={64} height={64} loading="lazy" decoding="async" className="absolute"/>
+          </div>
+
+            <p className="text-black">Le Chat: Your AI assistant for life and work.</p>
+          </div>
+          <div className="flex space-x-4">
+            <button className="bg-black text-white px-4 py-2 rounded">Download on App Store</button>
+            <button className="bg-black text-white px-4 py-2 rounded">Get it on Google Play</button>
+          </div>
         </div>
       </div>
-
-      {/* New Animated Section */}
-      <div className="mt-20 flex items-center space-x-12">
-        <div className="text-right max-w-md">
-          <h2 className="text-2xl font-bold text-gray-900">Share interactive slides</h2>
-          <p className="mt-2 text-gray-600">
-            So your viewers can easily copy code snippets and interact with links.
-          </p>
-        </div>
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <Image src="/gecko.jpeg" width={600} height={400} alt="Technical Content" />
-        </motion.div>
+      <div>
+        <LogoSlider />
+        
       </div>
-
-      {/* Trusted By Section */}
-      <div className="mt-16 text-gray-600 text-sm">Trusted by industry leaders around the globe</div>
-      <div className="mt-4 flex space-x-8">
-        <span className="text-gray-800 font-semibold">vendure</span>
-        <span className="text-gray-800 font-semibold">jina</span>
-        <span className="text-gray-800 font-semibold">Textualize</span>
-        <span className="text-gray-800 font-semibold">chakra</span>
-        <span className="text-gray-800 font-semibold">supabase</span>
+      <div className="bg-amber-50">
+        <Future />
       </div>
+      <div>
+        <TextSlider />
+      </div>
+      
+      <Content />
+      
+      
+
+
     </div>
+      
+
+    
   );
 }
