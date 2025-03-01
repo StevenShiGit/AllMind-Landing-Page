@@ -18,7 +18,7 @@ const logos = [
 
 export default function LogoSlider() {
   return (
-    <div className="bg-amber-50 w-full h-[150px] flex items-center py-6">
+    <div className="bg-amber-50 w-full h-[150px] flex items-center py-6 ">
       <Splide
         options={{
           type: "loop",

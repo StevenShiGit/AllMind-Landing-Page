@@ -1,51 +1,46 @@
 "use client";
 import "@splidejs/react-splide/css"; // Default styles
-import Image from "next/image";
 
+import Image from "next/image"
 
 const Splide = require("@splidejs/react-splide").Splide;
 const SplideSlide = require("@splidejs/react-splide").SplideSlide;
 const AutoScroll = require("@splidejs/splide-extension-auto-scroll").AutoScroll
 
+
+
 export default function TextSlider() {
   return (
-    <div className="bg-amber-50 w-full h-[30vh] flex items-center py-6">
+    <div className="flex py-6 overflow-hidden mt-32 pb-20">
       <Splide
         options={{
           type: "loop",
+          drag: false, 
           arrows: false,
           pagination: false,
-          perPage: 3,
-          gap: "1rem",
-          drag: false, // Prevents manual dragging
-          autoWidth: true, // Allows content to size dynamically
-          focus: "center", // Keeps focus centered
-          speed: 3000, // Adjust for smoothness
-          extensions: { AutoScroll }, // Enable AutoScroll
+          perPage: 8.5, 
+          clones: 4,
           autoScroll: {
-            speed: 1, // Adjust speed (higher = faster)
-            pauseOnHover: false, // Keep it scrolling when hovered
-            pauseOnFocus: false, // Keep it scrolling even when clicked
+            speed: 1.5, 
+            pauseOnHover: false,
+            pauseOnFocus: false,
+            rewind: false,
           },
+          gap: "1rem", 
         }}
         extensions={{ AutoScroll }}
+        aria-label="Mistral Marquee"
       >
-        <SplideSlide>
-          <Image src="/BlackLogo.svg" alt="BlackLogo" width={67.2} height={48} />
-        </SplideSlide>
-        <SplideSlide>
-          <p className="text-6xl text-black font-medium whitespace-nowrap">One platform.</p>
-        </SplideSlide>
-        <SplideSlide>
-          <p className="text-6xl font-medium text-black whitespace-nowrap">Many uses.</p>
-        </SplideSlide>
-        <SplideSlide>
-          <p className="text-6xl font-medium text-black whitespace-nowrap">For all humans.</p>
-        </SplideSlide>
+        
+          <SplideSlide>
+            <div className="flex gap-x-4 whitespace-nowrap items-center text-6xl text-black">
+              <p>One platform. Many uses. For all humans.</p>
 
-        <SplideSlide>
-          <p className="text-6xl font-medium text-black whitespace-nowrap">One platform.</p>
-        </SplideSlide>
+              <Image src="/BlackLogo.svg" alt="BlackLogo" width={68} height={30} />
+
+            </div>
+          </SplideSlide>
+      
       </Splide>
     </div>
   );
