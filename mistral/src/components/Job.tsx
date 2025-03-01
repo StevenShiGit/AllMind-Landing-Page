@@ -1,4 +1,3 @@
-import Image from "next/image"
 export default function Job(){
     return(
         <div className="flex flex-col justify-end mt-16 bg-cover bg-center bg-[url('/workers.webp')] text-white h-[483px] px-[1rem] md:px-[3rem] pb-[3rem]">

@@ -1,10 +1,10 @@
 "use client";
-import "@splidejs/react-splide/css"; // Default styles
+import "@splidejs/react-splide/css"; 
 
 
-const Splide = require("@splidejs/react-splide").Splide;
-const SplideSlide = require("@splidejs/react-splide").SplideSlide;
-const AutoScroll = require("@splidejs/splide-extension-auto-scroll").AutoScroll
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
+
 
 const logos = [
   "https://cms.mistral.ai/assets/b42ef223-a3d8-42d7-b7a9-4fee0023fdd2",

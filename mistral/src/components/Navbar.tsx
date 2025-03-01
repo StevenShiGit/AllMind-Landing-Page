@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import MenuButton from "@/components/MenuButton"
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);

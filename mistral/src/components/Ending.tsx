@@ -1,4 +1,3 @@
-import Image from "next/image"
 import SearchButton from "@/components/SearchButton"
 export default function Ending(){
     return(

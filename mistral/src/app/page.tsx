@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 
 import LogoSlider from "@/components/logoSlider2";
 import Future from "@/components/future"

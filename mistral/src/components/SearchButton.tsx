@@ -2,7 +2,6 @@ interface SearchButtonProps {
     text: string;
     color: string
 }
-import Image from "next/image"
 export default function SearchButton({ text,color }: SearchButtonProps) {
     return (
         <a href="/contact" target="_self" className="min-w-full md:min-w-min">
